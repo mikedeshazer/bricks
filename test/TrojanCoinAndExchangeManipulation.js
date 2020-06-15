@@ -1,5 +1,8 @@
 const TrojanCoinAfter = artifacts.require("TrojanCoinAfter");
-const HackableExchange1 = artifacts.require("HackableExchange1");
+//const HackableExchange1After = artifacts.require("HackableExchange1After");
+//const HackableExchange2After = artifacts.require("HackableExchange2After");
+const FlashLoanProvider1After = artifacts.require("FlashLoanProvider1After");
+
 
 contract("TrojanCoinAfter", async accounts => {
   it("It should change the totalSupply (proving you are the owner of the contract) if changeSupply function is called with random number creater than 1m", async () => {
@@ -22,12 +25,12 @@ contract("TrojanCoinAfter", async accounts => {
 
 
 
-
-contract("HackableExchange1", async accounts => {
+/*
+contract("HackableExchange1After", async accounts => {
   it("Should swap eth to tokens after the tokens have been added to its market and if you call it twice in same transaction send you extra eth than it typically would", async () => {
 
 
-   coin = await HackableExchange1.deployed();
+   coin = await HackableExchange1After.deployed();
 
 
         assert.isAtLeast(supposedToAmount, actualAmount, "You executed a reentry account but the exchange didnt give you extra money for it.")
@@ -36,28 +39,36 @@ contract("HackableExchange1", async accounts => {
  })
 });
 
+*/
+contract("FlashLoanProvider1After", async accounts => {
+  it("Give you a bunch of eDai  (up to 1 million eDai)  once it is liquidityprovided initially by account 6. When you request funds, it should call executeOperation and then check its balance ensuring that it receieved its money back ", async () => {
 
-contract("FlashLoanProvider1", async accounts => {
-  it("Give you a bunch of eth (up to 50 eth)  once it is liquidityprovided initially by account 6. When you request funds, it should call executeOperation and then check its balance ensuring that it receieved its money back ", async () => {
+    let tbeContract;
+    let originalUserBalance;
+    let currentUserBalance;
+   theContract = await FlashLoanProvider1After.deployed();
+    originalUserBalance = parseInt(await theContract.balanceOf(accounts[0]));
 
+    await theContract.borrow('1000000000000000000000000');
 
-   coin = await FlashLoanProvider1.deployed();
+    currentUserBalance = parseInt(await theContract.balanceOf(accounts[0]));
 
-
-        assert.isAbove(originalUserBalance, currentUserBlance, "User should have more of the token they borrowed at the end because flash loan executed successfully")
+      console.log("start"+originalUserBalance)
+      console.log("end"+currentUserBalance);
+        assert.isAbove(currentUserBalance, originalUserBalance, "User should have more of the token they borrowed at the end because flash loan executed successfully")
 
 
  })
 });
 
 
+/*
 
-
-contract("HackableExchange2", async accounts => {
+contract("HackableExchange2After", async accounts => {
   it("Should allow you to open a large BTCETH position and get price information from the hackable exchange. And let you close your position based on information from that exchange.", async () => {
 
 
-   coin = await HackableExchange1.deployed();
+   coin = await HackableExchange1After.deployed();
 
 
         assert.isUnder(pricebeforeJacking, priceAfterJacking, "You executed a reentry account but the exchange didnt give you extra money for it.")
@@ -65,3 +76,5 @@ contract("HackableExchange2", async accounts => {
 
  })
 });
+
+*/

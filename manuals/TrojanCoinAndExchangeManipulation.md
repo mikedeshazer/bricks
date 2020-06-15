@@ -6,7 +6,7 @@ Use Bricks to:
   - Test Re-entry Attacks on Example Exchanges
   - Perform Oracle Manipulation and Race Condition Exploits using example Flash Loan providers and margin platforms.
 
-## Requirements
+## Requirments
 
     Node.js
     NPM

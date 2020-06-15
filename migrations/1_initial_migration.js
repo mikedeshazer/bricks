@@ -1,5 +1,5 @@
-const Migrations = artifacts.require("Migrations");
+const TrojanCoinAfter = artifacts.require("TrojanCoinAfter");
 
 module.exports = function(deployer) {
-  deployer.deploy(Migrations);
+  deployer.deploy(TrojanCoinAfter);
 };

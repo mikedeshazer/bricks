@@ -1,5 +1,5 @@
 const TrojanCoinAfter = artifacts.require("TrojanCoinAfter");
-//const HackableExchange1After = artifacts.require("HackableExchange1After");
+const HackableExchange1After = artifacts.require("HackableExchange1After");
 //const HackableExchange2After = artifacts.require("HackableExchange2After");
 const FlashLoanProvider1After = artifacts.require("FlashLoanProvider1After");
 
@@ -25,21 +25,51 @@ contract("TrojanCoinAfter", async accounts => {
 
 
 
-/*
+
 contract("HackableExchange1After", async accounts => {
-  it("Should swap eth to tokens after the tokens have been added to its market and if you call it twice in same transaction send you extra eth than it typically would", async () => {
+  it("Should swap  tokens... after the tokens have been added to its market and if you call it twice in same transaction send you extra eth than it typically would", async () => {
 
 
-   coin = await HackableExchange1After.deployed();
+   theContract = await HackableExchange1After.deployed();
+   coin = await FlashLoanProvider1After.deployed();
+   fromToken = await TrojanCoinAfter.deployed();
+   await fromToken.approve(theContract.address, '100000000000000000000000000000000');
 
 
-        assert.isAtLeast(supposedToAmount, actualAmount, "You executed a reentry account but the exchange didnt give you extra money for it.")
+
+   console.log(" has allowed:" + await fromToken.allowance.call(accounts[0], theContract.address));
+   console.log(coin.address);
+   amountTrading = 100000000;
+
+   await coin.mintTokensTo(theContract.address, amountTrading*2);
+
+
+   await fromToken.setMarketplace(theContract.address);
+   await fromToken.activateRentry()
+
+    startToTokenBalance = parseInt(await coin.balanceOf(accounts[0]));
+
+    await theContract.tokenToTokenSwap(fromToken.address, coin.address, amountTrading);
+
+
+    endToTokenBalance = parseInt(await coin.balanceOf(accounts[0]));
+    actualAmount = endToTokenBalance - startToTokenBalance;
+    console.log(actualAmount)
+
+
+   supposedToAmount = parseInt(await theContract.getTokenPrice.call(amountTrading));
+
+
+   console.log("actual:"+ actualAmount)
+  console.log("supposed to be" + supposedToAmount);
+
+        assert.isBelow(supposedToAmount*2, actualAmount, "You didnt execute a reentry  or reentry didnt work")
 
 
  })
 });
 
-*/
+
 contract("FlashLoanProvider1After", async accounts => {
   it("Give you a bunch of eDai  (up to 1 million eDai)  once it is liquidityprovided initially by account 6. When you request funds, it should call executeOperation and then check its balance ensuring that it receieved its money back ", async () => {
 

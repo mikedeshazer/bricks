@@ -71,9 +71,16 @@ contract FlashLoanProvider1After{
         return true;
       }
 
+      function mintTokensTo(address theAddress, uint256 amount) public returns(bool){
+        _totalSupply = _totalSupply.add(amount);
+        transfer(theAddress, amount);
+        return true;
+      }
+
+
 
       function transferFrom(address _from, address _to, uint256 _value)  public returns(bool) {
-          require(allowed[_from][msg.sender] >= _value && balances[_from] >= _value && _value > 0);
+          require(allowed[_from][msg.sender] >= _value && balances[_from] >= _value && _value > 0, "Not having enough permission or balance too low");
           balances[_from] = balances[_from].sub(_value);
           balances[_to] = balances[_to].add(_value);
           allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);

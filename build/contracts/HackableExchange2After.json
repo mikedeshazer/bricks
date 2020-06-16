@@ -1,22 +1,22 @@
 {
   "contractName": "HackableExchange2After",
   "abi": [],
-  "metadata": "{\"compiler\":{\"version\":\"0.6.6+commit.6c089d02\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/nimblesixthousand/Desktop/apps/bricks/contracts/kits/TrojanCoinAndExchangeManipulation/after/HackableExchange2After.sol\":\"HackableExchange2After\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/nimblesixthousand/Desktop/apps/bricks/contracts/kits/TrojanCoinAndExchangeManipulation/after/HackableExchange2After.sol\":{\"keccak256\":\"0x6fe8aa16d8a5821426cc654f0d7c56d251751e0be8b49212188ee0297888d3e5\",\"urls\":[\"bzz-raw://16c9779d49edd041b8375baddc31f019952d8c1bdcdc9e946c00d344a27cdcbe\",\"dweb:/ipfs/QmQFduY35ZtJhLeQdAtcefA9cryU5vVrSyhiDrJ8xcPP7M\"]}},\"version\":1}",
-  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220edb80feeaaab92cee1b8101e4c2cc886648bda4b3597c3a890074ba6580be15064736f6c63430006060033",
-  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220edb80feeaaab92cee1b8101e4c2cc886648bda4b3597c3a890074ba6580be15064736f6c63430006060033",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.6+commit.6c089d02\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/nimblesixthousand/Desktop/apps/bricks/contracts/kits/TrojanCoinAndExchangeManipulation/after/HackableExchange2After.sol\":\"HackableExchange2After\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/nimblesixthousand/Desktop/apps/bricks/contracts/kits/TrojanCoinAndExchangeManipulation/after/HackableExchange2After.sol\":{\"keccak256\":\"0xbf57a0193da11549d73a03cd4266c8a014f8b63ea76b597cb99d38700a626427\",\"urls\":[\"bzz-raw://6ca5e5b7c4b2abc5eefc98046ae52ffa7fcbe4af19b49b6d90e06193e2484af1\",\"dweb:/ipfs/Qma3EWKNnbc33WZQ8xWqBdjEq36wWTfjCoW2v9zhRmTiuc\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220b7b091c50fb21512c33c17d59ab3156432ebd6182a52690d2a335a6cbc66e4ca64736f6c63430006060033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220b7b091c50fb21512c33c17d59ab3156432ebd6182a52690d2a335a6cbc66e4ca64736f6c63430006060033",
   "immutableReferences": {},
-  "sourceMap": "0:37:6:-:0;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;0:37:6;;;;;;;",
-  "deployedSourceMap": "0:37:6:-:0;;;12:1:-1;9;2:12",
-  "source": "contract HackableExchange2After{\n  \n}\n",
+  "sourceMap": "2:37:6:-:0;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;:37:6;;;;;;;",
+  "deployedSourceMap": "2:37:6:-:0;;;12:1:-1;9;2:12",
+  "source": "\n\ncontract HackableExchange2After{\n\n\n\n}\n",
   "sourcePath": "/Users/nimblesixthousand/Desktop/apps/bricks/contracts/kits/TrojanCoinAndExchangeManipulation/after/HackableExchange2After.sol",
   "ast": {
     "absolutePath": "/Users/nimblesixthousand/Desktop/apps/bricks/contracts/kits/TrojanCoinAndExchangeManipulation/after/HackableExchange2After.sol",
     "exportedSymbols": {
       "HackableExchange2After": [
-        541
+        761
       ]
     },
-    "id": 542,
+    "id": 762,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -26,27 +26,27 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 541,
+        "id": 761,
         "linearizedBaseContracts": [
-          541
+          761
         ],
         "name": "HackableExchange2After",
         "nodeType": "ContractDefinition",
         "nodes": [],
-        "scope": 542,
-        "src": "0:37:6"
+        "scope": 762,
+        "src": "2:37:6"
       }
     ],
-    "src": "0:38:6"
+    "src": "2:38:6"
   },
   "legacyAST": {
     "absolutePath": "/Users/nimblesixthousand/Desktop/apps/bricks/contracts/kits/TrojanCoinAndExchangeManipulation/after/HackableExchange2After.sol",
     "exportedSymbols": {
       "HackableExchange2After": [
-        541
+        761
       ]
     },
-    "id": 542,
+    "id": 762,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -56,18 +56,18 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 541,
+        "id": 761,
         "linearizedBaseContracts": [
-          541
+          761
         ],
         "name": "HackableExchange2After",
         "nodeType": "ContractDefinition",
         "nodes": [],
-        "scope": 542,
-        "src": "0:37:6"
+        "scope": 762,
+        "src": "2:37:6"
       }
     ],
-    "src": "0:38:6"
+    "src": "2:38:6"
   },
   "compiler": {
     "name": "solc",
@@ -75,7 +75,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.0",
-  "updatedAt": "2020-06-15T23:28:33.433Z",
+  "updatedAt": "2020-06-16T04:43:08.323Z",
   "devdoc": {
     "methods": {}
   },

@@ -7,7 +7,7 @@ Use Bricks to:
   - Perform Oracle Manipulation and Race Condition Exploits using example Flash Loan providers and margin platforms.
 
 ## Requirements
- - Node.js & npm (If you don't have them (npm command doesn't work in your terminal), install [here](https://nodejs.org/en/))
+ - Node.js & npm (If you don't have them, don't know, and/or npm command doesn't work in your terminal, install [here](https://nodejs.org/en/))
  - Truffle (npm install -g truffle)
  - Ganache (If you don't have it, install [here](https://www.trufflesuite.com/ganache))
  - Basic understanding of how all of these work.

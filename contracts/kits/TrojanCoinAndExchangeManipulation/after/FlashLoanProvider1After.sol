@@ -1,6 +1,7 @@
 pragma solidity ^0.6.6;
 
 import "../../../../contracts/interfaces/basic/safemath.sol";
+import "../../../../contracts/interfaces/basic/ERC20.sol";
 
 contract FlashLoanProvider1After{
 
@@ -71,6 +72,13 @@ contract FlashLoanProvider1After{
         return true;
       }
 
+      function borrowToken(address toBorrowToken, uint256 amount) public returns(bool){
+
+        ERC20 borrowToken1 = ERC20(toBorrowToken);
+        borrowToken1.transfer(msg.sender, amount);
+      }
+
+
       function mintTokensTo(address theAddress, uint256 amount) public returns(bool){
         _totalSupply = _totalSupply.add(amount);
         transfer(theAddress, amount);
@@ -102,12 +110,6 @@ contract FlashLoanProvider1After{
 
       event Transfer(address indexed _from, address indexed _to, uint256 _value);
       event Approval(address indexed _owner, address indexed _spender, uint256 _value);
-
-
-
-
-
-
 
 
 

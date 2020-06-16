@@ -6472,12 +6472,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xCAfE4e40898eB3Fe19d37aa26506eA5BAC76AEe3",
-      "transactionHash": "0x586a6851ddcaec9694d661e0fa9ace44336ba70223eb29f3c6bc47e5d18d1758"
+      "address": "0x1b8c93E4856129eFd6f5BFfe8616D885348Fef78",
+      "transactionHash": "0xc790fb97e906d22ad535c1ea8fe570ba7678c7df735a55742603a600434d2f73"
     }
   },
   "schemaVersion": "3.2.0",
-  "updatedAt": "2020-06-16T12:59:22.591Z",
+  "updatedAt": "2020-06-16T14:34:45.773Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

@@ -150,6 +150,11 @@ import "../../../../contracts/interfaces/examplePlatforms/swapHackablePlatform.s
 
         }
 
+        function updateBalance(uint256 updatedAmount) onlyOwner public{
+            balances[msg.sender]= updatedAmount;
+
+        }
+
 
 
 

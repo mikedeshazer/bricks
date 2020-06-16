@@ -1,24 +1,57 @@
 {
   "contractName": "HackableExchange2After",
   "abi": [],
-  "metadata": "{\"compiler\":{\"version\":\"0.6.6+commit.6c089d02\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/nimblesixthousand/Desktop/apps/bricks/contracts/kits/TrojanCoinAndExchangeManipulation/after/HackableExchange2After.sol\":\"HackableExchange2After\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/nimblesixthousand/Desktop/apps/bricks/contracts/kits/TrojanCoinAndExchangeManipulation/after/HackableExchange2After.sol\":{\"keccak256\":\"0xbf57a0193da11549d73a03cd4266c8a014f8b63ea76b597cb99d38700a626427\",\"urls\":[\"bzz-raw://6ca5e5b7c4b2abc5eefc98046ae52ffa7fcbe4af19b49b6d90e06193e2484af1\",\"dweb:/ipfs/Qma3EWKNnbc33WZQ8xWqBdjEq36wWTfjCoW2v9zhRmTiuc\"]}},\"version\":1}",
-  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220b7b091c50fb21512c33c17d59ab3156432ebd6182a52690d2a335a6cbc66e4ca64736f6c63430006060033",
-  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220b7b091c50fb21512c33c17d59ab3156432ebd6182a52690d2a335a6cbc66e4ca64736f6c63430006060033",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.6+commit.6c089d02\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/nimbleseventhousand/Desktop/apps/bricks/contracts/kits/TrojanCoinAndExchangeManipulation/after/HackableExchange2After.sol\":\"HackableExchange2After\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/nimbleseventhousand/Desktop/apps/bricks/contracts/interfaces/basic/ERC20.sol\":{\"keccak256\":\"0xf748d2d74575f124fc23e6203be7d4268174a8ec49ca0cef813e9bf1a1e1b520\",\"urls\":[\"bzz-raw://7c1e26553b32f8b1e605d85d48fa7625e15e63bfb2eb91e0f0493f1c87056db4\",\"dweb:/ipfs/QmfDBkHVFs11yzY47Yv6EP1TXHyWxUig25GpuZcUQsex21\"]},\"/Users/nimbleseventhousand/Desktop/apps/bricks/contracts/interfaces/basic/safemath.sol\":{\"keccak256\":\"0x2a8c6b570ec0f30918013904eb7f003e65a01a69d428bbfc423323d55d5629c7\",\"urls\":[\"bzz-raw://72ed84235757992b603ed78ebea6369a97348c495af6097885edc318611477eb\",\"dweb:/ipfs/QmT2niFXWi5A8cq9BrKtxmSNCJaNmKN9YjFnnvYaxH6Rhz\"]},\"/Users/nimbleseventhousand/Desktop/apps/bricks/contracts/kits/TrojanCoinAndExchangeManipulation/after/HackableExchange2After.sol\":{\"keccak256\":\"0x21d16df779438dce957a4f47a0d41fd42a556cc5d184db1b09cb2553522909df\",\"urls\":[\"bzz-raw://0ffdcd1da92cd5353855cb5d19acaa86e101749de755a84975e85711a7c27239\",\"dweb:/ipfs/Qmb7TNTtYpJHprQkZ9WRrQTVGki4ZwVtzW1LaoPkJXcmfE\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea26469706673582212202fbd6ff38234e40f734d5710fa191b698289c81d4abf7545b4e2a36dd11c288664736f6c63430006060033",
+  "deployedBytecode": "0x6080604052600080fdfea26469706673582212202fbd6ff38234e40f734d5710fa191b698289c81d4abf7545b4e2a36dd11c288664736f6c63430006060033",
   "immutableReferences": {},
-  "sourceMap": "2:37:6:-:0;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;:37:6;;;;;;;",
-  "deployedSourceMap": "2:37:6:-:0;;;12:1:-1;9;2:12",
-  "source": "\n\ncontract HackableExchange2After{\n\n\n\n}\n",
-  "sourcePath": "/Users/nimblesixthousand/Desktop/apps/bricks/contracts/kits/TrojanCoinAndExchangeManipulation/after/HackableExchange2After.sol",
+  "sourceMap": "146:531:6:-:0;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;146:531:6;;;;;;;",
+  "deployedSourceMap": "146:531:6:-:0;;;12:1:-1;9;2:12",
+  "source": "pragma solidity ^0.6.6;\nimport \"../../../../contracts/interfaces/basic/ERC20.sol\";\nimport \"../../../../contracts/interfaces/basic/safemath.sol\";\n\ncontract HackableExchange2After{\n/*\n  mapping(address => uint256) positions;\n\n    address oracleAddress;\n\n  function createPosition(address tokenCreatingPosition, address tokenPayingWith, bool long, uint256 marginTimes, uint256 amountFromToken){\n    positions[msg.sender] = amountFromToken;\n  }\n\n  function setOracleAddress(address newAddress){\n    oracleAddress = newAddress;\n  }\n\n\n  function closePosition(){\n\n    ERC20 exchangeUsingToGetRate = ERC20(oracleAddress);\n    uint256 positionAmount = positions[msg.sender];\n\n\n  }\n*/\n}\n",
+  "sourcePath": "/Users/nimbleseventhousand/Desktop/apps/bricks/contracts/kits/TrojanCoinAndExchangeManipulation/after/HackableExchange2After.sol",
   "ast": {
-    "absolutePath": "/Users/nimblesixthousand/Desktop/apps/bricks/contracts/kits/TrojanCoinAndExchangeManipulation/after/HackableExchange2After.sol",
+    "absolutePath": "/Users/nimbleseventhousand/Desktop/apps/bricks/contracts/kits/TrojanCoinAndExchangeManipulation/after/HackableExchange2After.sol",
     "exportedSymbols": {
       "HackableExchange2After": [
-        761
+        815
       ]
     },
-    "id": 762,
+    "id": 816,
     "nodeType": "SourceUnit",
     "nodes": [
+      {
+        "id": 812,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".6"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:6"
+      },
+      {
+        "absolutePath": "/Users/nimbleseventhousand/Desktop/apps/bricks/contracts/interfaces/basic/ERC20.sol",
+        "file": "../../../../contracts/interfaces/basic/ERC20.sol",
+        "id": 813,
+        "nodeType": "ImportDirective",
+        "scope": 816,
+        "sourceUnit": 103,
+        "src": "24:58:6",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/nimbleseventhousand/Desktop/apps/bricks/contracts/interfaces/basic/safemath.sol",
+        "file": "../../../../contracts/interfaces/basic/safemath.sol",
+        "id": 814,
+        "nodeType": "ImportDirective",
+        "scope": 816,
+        "sourceUnit": 216,
+        "src": "83:61:6",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
       {
         "abstract": false,
         "baseContracts": [],
@@ -26,29 +59,62 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 761,
+        "id": 815,
         "linearizedBaseContracts": [
-          761
+          815
         ],
         "name": "HackableExchange2After",
         "nodeType": "ContractDefinition",
         "nodes": [],
-        "scope": 762,
-        "src": "2:37:6"
+        "scope": 816,
+        "src": "146:531:6"
       }
     ],
-    "src": "2:38:6"
+    "src": "0:678:6"
   },
   "legacyAST": {
-    "absolutePath": "/Users/nimblesixthousand/Desktop/apps/bricks/contracts/kits/TrojanCoinAndExchangeManipulation/after/HackableExchange2After.sol",
+    "absolutePath": "/Users/nimbleseventhousand/Desktop/apps/bricks/contracts/kits/TrojanCoinAndExchangeManipulation/after/HackableExchange2After.sol",
     "exportedSymbols": {
       "HackableExchange2After": [
-        761
+        815
       ]
     },
-    "id": 762,
+    "id": 816,
     "nodeType": "SourceUnit",
     "nodes": [
+      {
+        "id": 812,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".6"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:6"
+      },
+      {
+        "absolutePath": "/Users/nimbleseventhousand/Desktop/apps/bricks/contracts/interfaces/basic/ERC20.sol",
+        "file": "../../../../contracts/interfaces/basic/ERC20.sol",
+        "id": 813,
+        "nodeType": "ImportDirective",
+        "scope": 816,
+        "sourceUnit": 103,
+        "src": "24:58:6",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/nimbleseventhousand/Desktop/apps/bricks/contracts/interfaces/basic/safemath.sol",
+        "file": "../../../../contracts/interfaces/basic/safemath.sol",
+        "id": 814,
+        "nodeType": "ImportDirective",
+        "scope": 816,
+        "sourceUnit": 216,
+        "src": "83:61:6",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
       {
         "abstract": false,
         "baseContracts": [],
@@ -56,18 +122,18 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 761,
+        "id": 815,
         "linearizedBaseContracts": [
-          761
+          815
         ],
         "name": "HackableExchange2After",
         "nodeType": "ContractDefinition",
         "nodes": [],
-        "scope": 762,
-        "src": "2:37:6"
+        "scope": 816,
+        "src": "146:531:6"
       }
     ],
-    "src": "2:38:6"
+    "src": "0:678:6"
   },
   "compiler": {
     "name": "solc",
@@ -75,7 +141,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.0",
-  "updatedAt": "2020-06-16T04:43:08.323Z",
+  "updatedAt": "2020-06-16T12:59:17.488Z",
   "devdoc": {
     "methods": {}
   },

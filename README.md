@@ -18,9 +18,12 @@ Use Bricks to:
 
 Bricks requires [Node.js](https://nodejs.org/) v13+ to run properly
 
-Open Your Ganache application and open a workspace, keeping the default settings and using your bricks directory's truffle-config.js file to start the project from within Ganache. This will create a person project which responds to this particular project.
+Open Your Ganache application and open a workspace, keeping the default settings and using your bricks directory's truffle-config.js file to start the project from within Ganache. This will create a personal blockchain which responds to this particular project.
+
+Run `truffle migrate` to deploy the smart contracts in the repo and start playing around.
 
 Navigate to the  /manuals folder, and select a .md file tied to a particular exploit you would like to build. The /contracts/kits folder contains all the different kits connected to manuals (same name).
+
 
 
 ### Development

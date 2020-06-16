@@ -8,11 +8,10 @@ Use Bricks to:
 
 ## Requirements
 
-    Node.js
-    NPM
-    Truffle
-    Ganache
-    Basic understand of how all of these work.
+    Node.js & npm (If you don't have it, install [here](https://nodejs.org/en/))
+    Truffle (npm install -g truffle)
+    Ganache (If you don't have it, install [here](https://www.trufflesuite.com/ganache))
+    Basic understanding of how all of these work.
 
 ### Installation
 

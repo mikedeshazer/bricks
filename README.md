@@ -22,6 +22,8 @@ Open Your Ganache application and open a workspace, keeping the default settings
 
 Run `truffle migrate` to deploy the smart contracts in the repo and start playing around.
 
+The /contracts/kits/ folder contains all the projects you can work on. Select a project and start in the /before folder to see the code pre-exploits. Look for `BrickHint` keywords to find hints to add the exploits and make the whole thing come alive in each of the files. You can refer to the /after folder, to see the answers and test, too.
+
 Navigate to the  /manuals folder, and select a .md file tied to a particular exploit you would like to build. The /contracts/kits folder contains all the different kits connected to manuals (same name).
 
 

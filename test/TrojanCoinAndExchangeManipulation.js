@@ -5,7 +5,7 @@ const FlashLoanProvider1After = artifacts.require("FlashLoanProvider1After");
 
 
 contract("TrojanCoinAfter", async accounts => {
-  it("It should change the totalSupply (proving you are the owner of the contract) if changeSupply function is called with random number creater than 1m", async () => {
+  it("It should change the totalSupply of a malicious coin (TrojanCoin) once the change supply  backdoor is initialized", async () => {
 
     let coin;
    let coinSupply;
@@ -27,7 +27,7 @@ contract("TrojanCoinAfter", async accounts => {
 
 
 contract("HackableExchange1After", async accounts => {
-  it("Should swap  tokens... after the tokens have been added to its market and if you call it twice in same transaction send you extra eth than it typically would", async () => {
+  it("Should swap  tokens as a decentralized exchange... When you perform a swap with a trojancoin, you can execute a reentry attack and get more money than you should from the exchange.", async () => {
 
 
    theContract = await HackableExchange1After.deployed();
@@ -71,7 +71,7 @@ contract("HackableExchange1After", async accounts => {
 
 
 contract("FlashLoanProvider1After", async accounts => {
-  it("Give you a bunch of eDai  (up to 1 million eDai)  once it is liquidityprovided initially by account 6. When you request funds, it should call executeOperation and then check its balance ensuring that it receieved its money back ", async () => {
+  it("Give you a bunch of eDai  (up to 1 million eDai) as a flash loan once it has liquidity provided initially.  ", async () => {
 
     let tbeContract;
     let originalUserBalance;
@@ -95,7 +95,7 @@ contract("FlashLoanProvider1After", async accounts => {
 
 
 contract("HackableExchange2After", async accounts => {
-  it("Should allow you to open a large BTCETH position and get price information from the hackable exchange. And let you close your position based on information from that exchange.", async () => {
+  it("Should allow you to open a large TrojanCoin/DAI(stablecoin) position and get price information from the hackable exchange. And let you close your position based on information from that exchange. End result, you walk away with alot of money because you performed successful oracle manipulation.", async () => {
 
 
    theContract = await HackableExchange2After.deployed();

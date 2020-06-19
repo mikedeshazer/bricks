@@ -9,17 +9,17 @@ const FlashLoanProvider1Before = artifacts.require("FlashLoanProvider1Before");
 const HackableExchange1Before = artifacts.require("HackableExchange1Before");
 const HackableExchange2Before = artifacts.require("HackableExchange2Before");
 
-module.exports = async function(deployer) {
+module.exports = async function(deployer, network, accounts) {
 
   await deployer.deploy(TrojanCoinBefore);
-  deployer.deploy(FlashLoanProvider1Before );
-  deployer.deploy(HackableExchange1Before);
-  deployer.deploy(HackableExchange2Before);
+  await deployer.deploy(FlashLoanProvider1Before );
+  await deployer.deploy(HackableExchange1Before);
+  await deployer.deploy(HackableExchange2Before);
 
   await deployer.deploy(TrojanCoinAfter);
-  deployer.deploy(FlashLoanProvider1After );
-  deployer.deploy(HackableExchange1After);
-  deployer.deploy(HackableExchange2After);
+  await deployer.deploy(FlashLoanProvider1After );
+  await deployer.deploy(HackableExchange1After);
+  await deployer.deploy(HackableExchange2After);
 
 
   //You will be changing all the afters to befores for this when you copy/paste
@@ -28,26 +28,29 @@ module.exports = async function(deployer) {
         coinSupply = parseInt(await coin.totalSupply.call());
         console.log("coinSupply originally is " + coinSupply );
         await coin.updateSupply('1100000000000000000000000');
-        console.log("And now we will use one of our hacks to increase the coinSupply of trojancoin, so now it is: " + newSupply );
         newSupply = parseInt(await coin.totalSupply.call());
+        console.log("And now we will use one of our hacks to increase the coinSupply of trojancoin, so now it is: " + newSupply );
+
 
 
 
         //Second portion
         theContract = await HackableExchange1After.deployed();
         fromToken = await TrojanCoinAfter.deployed();
+        flashPlatformWithDaiCoin = await FlashLoanProvider1After.deployed();
+
         await fromToken.approve(theContract.address, '100000000000000000000000000000000');
         amountTrading = 100000000;
-        await coin.mintTokensTo(theContract.address, amountTrading*2);
+        await flashPlatformWithDaiCoin.mintTokensTo(theContract.address, amountTrading*2);
         await fromToken.setMarketplace(theContract.address);
         await fromToken.activateRentry()
-        startToTokenBalance = parseInt(await coin.balanceOf(accounts[0]));
+        startToTokenBalance = parseInt(await flashPlatformWithDaiCoin.balanceOf(accounts[0]));
 
         //The actual hack is here:
-        await theContract.tokenToTokenSwap(fromToken.address, coin.address, amountTrading);
+        await theContract.tokenToTokenSwap(fromToken.address, flashPlatformWithDaiCoin.address, amountTrading);
 
         //if we wanted to check that we executed this properly...
-        endToTokenBalance = parseInt(await coin.balanceOf(accounts[0]));
+        endToTokenBalance = parseInt(await flashPlatformWithDaiCoin.balanceOf(accounts[0]));
         actualAmount = endToTokenBalance - startToTokenBalance;
         console.log(actualAmount)
         supposedToAmount = parseInt(await theContract.getTokenPrice.call(amountTrading));
@@ -60,7 +63,6 @@ module.exports = async function(deployer) {
 
         //Last piortion
         theMarginPlatformContract = await HackableExchange2After.deployed();
-        flashPlatformWithDaiCoin = await FlashLoanProvider1After.deployed();
         fromToken = coin;
         oracleExchange = theContract;
 

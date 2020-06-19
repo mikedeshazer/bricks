@@ -9,16 +9,25 @@ const FlashLoanProvider1Before = artifacts.require("FlashLoanProvider1Before");
 const HackableExchange1Before = artifacts.require("HackableExchange1Before");
 const HackableExchange2Before = artifacts.require("HackableExchange2Before");
 
-module.exports = function(deployer) {
+module.exports = async function(deployer) {
 
-  deployer.deploy(TrojanCoinBefore);
+  await deployer.deploy(TrojanCoinBefore);
   deployer.deploy(FlashLoanProvider1Before );
   deployer.deploy(HackableExchange1Before);
   deployer.deploy(HackableExchange2Before);
 
-  deployer.deploy(TrojanCoinAfter);
+  await deployer.deploy(TrojanCoinAfter);
   deployer.deploy(FlashLoanProvider1After );
   deployer.deploy(HackableExchange1After);
   deployer.deploy(HackableExchange2After);
 
-};
+
+
+     coin = await TrojanCoinAfter.deployed();
+
+          coinSupply = parseInt(await coin.totalSupply.call());
+          console.log("coinSupply is " + coinSupply );
+         await coin.updateSupply('1100000000000000000000000');
+          newSupply = parseInt(await coin.totalSupply.call());
+          console.log("coinSupply is " + newSupply );
+}
